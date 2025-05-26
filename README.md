@@ -1,7 +1,7 @@
 # Branch names
-/feature  
-/bugfix  
-/release  
+feature/name-name  
+bugfix/    
+release/    
 
 # Commenty
 /add  
