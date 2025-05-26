@@ -1,5 +1,14 @@
+import Header from './components/common/header/header';
+
 function App() {
-  return <h1 className="text-3xl font-bold bg-red-800">Team Red</h1>;
+  return (
+    <div>
+      <Header />
+      {
+        /*Nějaký obsah stránky*/
+      }
+    </div>
+  );
 }
 
 export default App;
