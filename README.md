@@ -1,10 +1,18 @@
-# Branch names
-feature/name-name  
+# Konvence pojmenovani veci
+
+## Branch names
+feature/nazev-featury
 bugfix/    
 release/    
 
-# Commenty
+## Commenty
 /add  
 /fix  
 /update  
 /remove  
+
+## Slozky a soubory
+- Slozky: nazev-slozky  
+- Soubory: nazevSouboru
+- Komponenty: NazevKomponentu
+
