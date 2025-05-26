@@ -1,26 +1,26 @@
 
-function ProductCard() {
+function ProductCard({image, title, price}) {
     return (
-        <div className="flex flex-col items-center justify-between w-[200px] h-[300px] p-3 bg-[#d9d9d9] rounded-3xl relative m-2">
+        <div className="flex flex-col items-center justify-between w-[200px] h-[300px] p-3 bg-[#ffffff] rounded-3xl relative m-2 hover:shadow">
             <img
-                className="w-full h-[176px] bg-[#656565] rounded-2xl object-cover"
-                src="https://www.fixturescloseup.com/wp-content/uploads/2023/07/Market-32-Childrens-Rocket-Ship-Shopping-Cart-Main1.jpg"
+                className="w-full h-[176px] bg-[#656565] rounded-2xl object-cover mb-1"
+                src={image}
                 alt="obrázek produktu"
             />
             <div className="w-full relative p-1 flex flex-col items-start">
-                <h3 className="text-black font-normal text-[14px] leading-normal mb-1 mt-[-4px] font-inter">
-                    Fast car
+                <h3 className="text-black font-normal text-[14px] leading-normal mt-[-4px] font-inter">
+                    {title}
                 </h3>
-                <p className="text-black font-normal text-[8px] leading-normal font-inter">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
+                {/* <p className="text-black font-normal text-[10px] leading-3 font-inter">
+                    {description}
+                </p> */}
             </div>
-            <div className="w-full flex justify-between items-end p-1 relative">
+            <div className="w-full flex justify-between items-center p-1 relative">
                 <p className="text-black font-normal text-[12px] leading-normal font-inter">
-                    20 000¥
+                    {price}₹
                 </p>
-                <button className="bg-[#f00000] w-8 h-8 rounded-full overflow-hidden relative flex items-center justify-center">
-                    +
+                <button className="bg-blue-500 w-[32px] h-[32px] rounded-full overflow-hidden relative flex items-center justify-center">
+                    <img className="w-[24px] h-[24px]" src="../src/assets/icons/icons8-lease-30.png" alt="icon" />
                 </button>
             </div>
         </div>
