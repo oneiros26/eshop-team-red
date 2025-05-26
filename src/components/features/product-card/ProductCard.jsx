@@ -1,5 +1,6 @@
 
 function ProductCard({image, title, price}) {
+
     return (
         <div className="flex flex-col items-center justify-between w-[200px] h-[300px] p-3 bg-[#ffffff] rounded-3xl relative m-2 hover:shadow">
             <img
@@ -11,9 +12,6 @@ function ProductCard({image, title, price}) {
                 <h3 className="text-black font-normal text-[14px] leading-normal mt-[-4px] font-inter">
                     {title}
                 </h3>
-                {/* <p className="text-black font-normal text-[10px] leading-3 font-inter">
-                    {description}
-                </p> */}
             </div>
             <div className="w-full flex justify-between items-center p-1 relative">
                 <p className="text-black font-normal text-[12px] leading-normal font-inter">
