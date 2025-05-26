@@ -1,10 +1,10 @@
 # Branch names
-/feature
-/bugfix
-/release
+/feature  
+/bugfix  
+/release  
 
 # Commenty
-/add
-/fix
-/update
-/remove
+/add  
+/fix  
+/update  
+/remove  
