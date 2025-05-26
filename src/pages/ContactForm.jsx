@@ -1,6 +1,6 @@
-import FormInput from "./FormInput";
-import FormSelect from "./FormSelect";
-import Textarea from "./Textarea";
+import FormInput from "../components/common/form-fields/FormInput";
+import FormSelect from "../components/common/form-fields/FormSelect";
+import Textarea from "../components/common/form-fields/Textarea";
 import React, { useState } from "react";
 
 function ContactForm() {

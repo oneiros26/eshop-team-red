@@ -6,7 +6,7 @@ function Textarea() {
       <label className="text-md text-slate-800 font-medium mb-1">
         Please provide details.
       </label>
-      <textarea className="h-30 overflow-scroll resize-none w-full rounded-lg text-slate-800 bg-gray-50 border border-gray-300 focus:border-blue-500 text-sm outline-0 transition-all"></textarea>
+      <textarea className="px-2 py-1 h-30 overflow-scroll resize-none w-full rounded-lg text-slate-800 bg-gray-50 border border-gray-300 focus:border-blue-500 text-sm outline-0 transition-all"></textarea>
     </div>
   );
 }
