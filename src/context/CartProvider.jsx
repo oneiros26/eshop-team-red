@@ -8,27 +8,55 @@ function CartProvider({ children }) {
     const productsAvailable = useContext(DataContext);
 
     function addToCart(id) {
-        for (let product of productsAvailable) {
-            productsAvailable.find()
-            if (product.id === id)
-                if (cartItems.some(item => item.id === product.id))
-                    changeQuantity(product.id);
-                else
-                    setCartItems(prev => [...prev, product]);
-            else
-                console.log('Invalid product')
+
+        const product = productsAvailable.find(product => product.id === id);
+
+        if (!product) {
+            console.log('Invalid product')
+            return;
         }
+
+        if (cartItems.some(item => item.id === product.id))
+            incrementQuantity(product.id);
+        else
+            setCartItems(prev => [...prev, { ...product, quantity: 1 }]);
     }
 
     function removeFromCart(id) {
-        setCartItems(prev => prev.filter(item.id !== id));
+        setCartItems(prev => prev.filter(item => item.id !== id));
     }
 
-    function changeQuantity() {
+    function incrementQuantity(id) {
+        const item = cartItems.find(item => item.id === id);
 
+        if (item.quantity < 3) {
+            setCartItems((prev) =>
+                prev.map(prevItem =>
+                    prevItem.id === item.id
+                        ? { ...prevItem, quantity: prevItem.quantity + 1 }
+                        : prevItem
+                )
+            );
+        }
     }
 
-    return <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, changeQuantity }}>
+    function decrementQuantity(id) {
+        const item = cartItems.find(item => item.id === id);
+
+        if (item.quantity > 1) {
+            setCartItems((prev) =>
+                prev.map(prevItem =>
+                    prevItem.id === item.id
+                        ? { ...prevItem, quantity: prevItem.quantity - 1 }
+                        : prevItem
+                )
+            );
+        } else if (item.quantity === 1) {
+            removeFromCart(item.id);
+        }
+    }
+
+    return <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, incrementQuantity, decrementQuantity }}>
         {children}
     </CartContext.Provider>
 }
