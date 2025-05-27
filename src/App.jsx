@@ -1,6 +1,5 @@
 import TrendingSection from "./components/features/trendingsection";
 import React, { useContext } from "react";
-import ProductCard from "./components/features/product-card/ProductCard";
 import { DataContext } from "./context/DataProvider";
 import ProductPage from "./pages/ProductPage";
 import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
@@ -97,8 +96,9 @@ function App() {
 
   return (
     <>
-      
       <RouterProvider router={router} />
+      <CategorySection />
+      <TrendingSection />
     </>
   );
 }
