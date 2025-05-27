@@ -1,6 +1,6 @@
 function Testimonials() {
   return (
-    <article className="flex w-full h-40 items-center justify-evenly bg-blue-100">
+    <article className="flex w-full h-40 items-center justify-evenly bg-red-100 my-10">
       <section className="flex flex-col gap-1 items-center w-70 text-center">
         <p className="text-blue-500 text-3xl">
           &#9733;&#9733;&#9733;&#9733;&#9734;

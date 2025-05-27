@@ -9,6 +9,7 @@ import CategorySection from "./components/features/CategorySection";
 import OrderConfirm from "./pages/OrderConfirm";
 import HeroSection from "./components/features/HeroSection";
 import ContactForm from "./pages/ContactForm";
+import Testimonials from "./components/common/Testimonials";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +22,7 @@ function App() {
             <HeroSection />
             <CategorySection />
             <TrendingSection />
+            <Testimonials />
             <p className="w-full h-100 bg-blue-200">FOOTER COMPONENT</p>{" "}
             {/* TO-DO */}
           </main>
