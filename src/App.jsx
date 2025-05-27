@@ -7,56 +7,88 @@ import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import CheckoutForm from "./pages/CheckoutForm";
 import AddressForm from "./components/features/AddressForm";
 import Payment from "./components/features/Payment";
+import Header from "./components/common/header/Header"
 
 function App() {
-  const apiData = useContext(DataContext);
 
   const router = createBrowserRouter([
     {
+
       path: "/",
       element: (
-        <main>
-          <TrendingSection />
-        </main>
+        <>
+          <Header></Header>
+          <main>
+            <TrendingSection />
+          </main>
+        </>
       ),
       errorElement: <p>Error 404, page not found. How did you get here?</p>,
     },
     {
       path: "/product/:productId",
-      element: <ProductPage />,
+      element: (
+        <>
+          <Header></Header>
+          <ProductPage />
+        </>
+      )
     },
     {
       path: "/cart",
-      element: <p>CART COMPONENT</p>,
+      element: (
+        <>
+          <Header></Header>
+          <p>CART COMPONENT</p>
+        </>
+      )
     },
     {
       path: "/checkout/step-1",
-      element: <CheckoutForm />,
+      element: (
+        <>
+          <Header></Header>
+          <CheckoutForm />
+        </>
+      )
     },
     {
       path: "/checkout/step-2",
       element: (
-        <main className="flex flex-col h-screen gap-10 w-full">
-          <section className="flex gap-10 w-full h-auto">
-            <AddressForm />
-            <Payment />
-          </section>
-          <button
-            className="cursor-pointer w-30 h-15 bg-green-400 hover:bg-green-500 rounded-lg self-center text-xl fixed bottom-5"
-            type="submit"
-          >
-            Submit
-          </button>
-        </main>
-      ),
+        <>
+          <Header></Header>
+          <main className="flex flex-col h-screen gap-10 w-full">
+            <section className="flex gap-10 w-full h-auto">
+              <AddressForm />
+              <Payment />
+            </section>
+            <button
+              className="cursor-pointer w-30 h-15 bg-green-400 hover:bg-green-500 rounded-lg self-center text-xl fixed bottom-5"
+              type="submit"
+            >
+              Submit
+            </button>
+          </main>
+        </>
+      )
     },
     {
       path: "/checkout/step-3",
-      element: <p>CONFIRM COMPONENT</p>,
+      element: (
+        <>
+          <Header></Header>
+          <p>CONFIRM COMPONENT</p>
+        </>
+      )
     },
     {
       path: "/all-products",
-      element: <p>CHECKOUT COMPONENT</p>,
+      element: (
+        <>
+          <Header></Header>
+          <p>CHECKOUT COMPONENT</p>
+        </>
+      )
     },
   ]);
 
