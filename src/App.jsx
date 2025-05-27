@@ -1,3 +1,4 @@
+import React from 'react';
 import HeroSection from './components/features/hero-section/HeroSection';
 
 function App() {
