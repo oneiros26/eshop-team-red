@@ -1,69 +1,118 @@
-.header 
-{
+.header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #bb1111; 
-  color: #faf9f9;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #c90202;
+  color: white;
+  position: relative;
 }
 
-.header-left 
-{
-  flex: 1;
+.header-logo {
+  height: 40px;
 }
 
-.header-logo 
-{
-  width: 70px;
-  height: 50px;
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 15px;
 }
 
-.header-center 
-{
-  flex: 1;
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: arial;      
+  font-size: 18px;        
+}
+
+.header-center {
+  flex-grow: 1;
   text-align: center;
 }
 
-.header-title 
-{
+.header-title {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 24px;        
   font-weight: bold;
-  color: #f7f3f3;
 }
 
-.header-right 
-{
-  flex: 1;
+.header-right {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  gap: 1.5rem;
+  gap: 10px;
 }
 
-.header-contact 
-{
-  color: #fee2e2;
-  text-decoration: none;
-  font-weight: 500;
+.header-search {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white; 
+  color: black;          
+  font-size: 16px;
 }
 
-.header-contact:hover 
-{
-  text-decoration: underline;
+.cart-container {
+  position: relative;
 }
 
-.header-cart 
-{
+.header-cart {
   background: none;
   border: none;
-  font-size: 1.8rem;
+  color: white;
+  font-size: 24px;
   cursor: pointer;
-  color: #fee2e2;
 }
 
-.header-cart:hover 
-{
-  color: #f87171;
+.cart-dropdown {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 10;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+/* Responsive hamburger menu */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #121010;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    padding: 10px 0;
+    z-index: 9;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .header-center {
+    display: none;
+  }
 }
