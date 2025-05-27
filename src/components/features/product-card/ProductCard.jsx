@@ -17,7 +17,7 @@ function ProductCard({image, title, price}) {
                 <p className="text-black font-normal text-[12px] leading-normal font-inter">
                     {price}₹
                 </p>
-                <button className="bg-blue-500 w-[32px] h-[32px] rounded-full overflow-hidden relative flex items-center justify-center">
+                <button className="bg-blue-500 w-[32px] h-[32px] rounded-full relative flex items-center justify-center">
                     <img className="w-[24px] h-[24px]" src="../src/assets/icons/icons8-lease-30.png" alt="icon" />
                 </button>
             </div>

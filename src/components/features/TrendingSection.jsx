@@ -7,26 +7,36 @@ import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 
 function TrendingSection() {
-    const apiData = useContext(DataContext);
+    const apiData = useContext(DataContext)
+
+    const selectedIds = [8, 6, 9, 12, 7, 2]
+
+    const trendingProducts = apiData.filter(product =>
+        selectedIds.includes(product.id)
+    )
 
     return(
-        <Swiper 
-            spaceBetween={20}
-            slidesPerView={'auto'}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
-            loop={true}
-            modules={[Autoplay]}
-        >
-            {apiData.map((product) => (
-                <SwiperSlide style={{ width: '220px', backgroundColor: "yellow" }} key={product.id}>
-                    <ProductCard
-                        image={product.image}
-                        title={product.title}
-                        price={product.price}
-                    />
-                </SwiperSlide>
-            ))}
-        </Swiper>
+        <div>
+            <h2>Trending</h2>
+            <Swiper 
+                spaceBetween={20}
+                slidesPerView={'5'}
+                autoplay={{ delay: 1000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+                loop={true}
+                modules={[Autoplay]}
+                style={{backgroundColor: "green"}}
+            >
+                {trendingProducts.map((product) => (
+                    <SwiperSlide style={{ width: '220px', backgroundColor: "yellow", display: "flex", justifyContent: "center"}} key={product.id}>
+                        <ProductCard
+                            image={product.image}
+                            title={product.title}
+                            price={product.price}
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
     )
 }
 
