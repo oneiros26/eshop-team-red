@@ -3,6 +3,9 @@ import ProductCard from "./components/features/product-card/ProductCard";
 import { DataContext } from "./context/DataProvider";
 import ProductPage from "./pages/ProductPage";
 import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
+import CheckoutForm from "./pages/CheckoutForm";
+import AddressForm from "./components/features/AddressForm";
+import Payment from "./components/features/Payment";
 
 function App() {
   const apiData = useContext(DataContext);
@@ -25,6 +28,7 @@ function App() {
           </div>
         </main>
       ),
+      errorElement: <p>Error 404, page not found. How did you get here?</p>,
     },
     {
       path: "/product/:productId",
@@ -35,11 +39,28 @@ function App() {
       element: <p>CART COMPONENT</p>,
     },
     {
-      path: "/checkout",
-      element: <p>CHECKOUT COMPONENT</p>,
+      path: "/checkout/step-1",
+      element: <CheckoutForm />,
     },
     {
-      path: "/checkout-confirm",
+      path: "/checkout/step-2",
+      element: (
+        <main className="flex flex-col h-screen gap-10 w-full">
+          <section className="flex gap-10 w-full h-auto">
+            <AddressForm />
+            <Payment />
+          </section>
+          <button
+            className="cursor-pointer w-30 h-15 bg-green-400 hover:bg-green-500 rounded-lg self-center text-xl fixed bottom-5"
+            type="submit"
+          >
+            Submit
+          </button>
+        </main>
+      ),
+    },
+    {
+      path: "/checkout/step-3",
       element: <p>CONFIRM COMPONENT</p>,
     },
     {
