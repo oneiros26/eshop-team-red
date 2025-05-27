@@ -1,5 +1,9 @@
+import { CartContext } from "./../../../context/CartProvider";
+import React, { useContext } from 'react'
 
-function ProductCard({image, title, price}) {
+function ProductCard({ image, title, price }) {
+
+    const { addToCart } = useContext(CartContext);
 
     return (
         <div className="flex-shrink-0 flex flex-col items-center justify-between w-[200px] h-[300px] p-3 bg-[#ffffff] rounded-3xl m-2 hover:shadow">
@@ -17,7 +21,7 @@ function ProductCard({image, title, price}) {
                 <p className="text-black font-normal text-[12px] leading-normal font-inter">
                     {price}₹
                 </p>
-                <button className="bg-blue-500 w-[32px] h-[32px] rounded-full relative flex items-center justify-center">
+                <button onClick={() => addToCart(2)} className="bg-blue-500 w-[32px] h-[32px] rounded-full relative flex items-center justify-center">
                     <img className="w-[24px] h-[24px]" src="../src/assets/icons/icons8-lease-30.png" alt="icon" />
                 </button>
             </div>
