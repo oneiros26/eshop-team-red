@@ -16,7 +16,7 @@ function FormSelect({ label, name, id, value, onChange, required, options }) {
       >
         <option value="">--Please select an option--</option>
         {options.map((option) => (
-          <option key={option.id} value={option}>
+          <option key={option} value={option}>
             {option}
           </option>
         ))}

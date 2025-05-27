@@ -1,16 +1,13 @@
-import TrendingSection from "./components/features/trendingsection";
-import React, { useContext } from "react";
-import ProductCard from "./components/features/product-card/ProductCard";
-import { DataContext } from "./context/DataProvider";
+import TrendingSection from "./components/features/TrendingSection";
 import ProductPage from "./pages/ProductPage";
 import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import CheckoutForm from "./pages/CheckoutForm";
-import AddressForm from "./components/features/AddressForm";
-import Payment from "./components/features/Payment";
+import AddressForm from "./pages/AddressForm";
+import Payment from "./pages/PaymentForm";
+import OrderConfirm from "./pages/OrderConfirm";
+import HeroSection from "./components/features/HeroSection";
 
 function App() {
-  const apiData = useContext(DataContext);
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -27,7 +24,7 @@ function App() {
     },
     {
       path: "/cart",
-      element: <p>CART COMPONENT</p>,
+      element: <p>CART COMPONENT</p>, // TO-DO
     },
     {
       path: "/checkout/step-1",
@@ -35,28 +32,23 @@ function App() {
     },
     {
       path: "/checkout/step-2",
-      element: (
-        <main className="flex flex-col h-screen gap-10 w-full">
-          <section className="flex gap-10 w-full h-auto">
-            <AddressForm />
-            <Payment />
-          </section>
-          <button
-            className="cursor-pointer w-30 h-15 bg-green-400 hover:bg-green-500 rounded-lg self-center text-xl fixed bottom-5"
-            type="submit"
-          >
-            Submit
-          </button>
-        </main>
-      ),
+      element: <AddressForm />,
     },
     {
       path: "/checkout/step-3",
-      element: <p>CONFIRM COMPONENT</p>,
+      element: <Payment />,
+    },
+    {
+      path: "/checkout/step-4",
+      element: <OrderConfirm />,
     },
     {
       path: "/all-products",
-      element: <p>CHECKOUT COMPONENT</p>,
+      element: <p>CHECKOUT COMPONENT</p>, // TO-DO
+    },
+    {
+      path: "/contact",
+      element: "",
     },
   ]);
 

@@ -17,7 +17,7 @@ function TrendingSection() {
 
   return (
     <div>
-      <h2>Trending</h2>
+      <h2 className="text-center font-semibold text-4xl p-4">Trending</h2>
       <Swiper
         spaceBetween={20}
         slidesPerView={"5"}
