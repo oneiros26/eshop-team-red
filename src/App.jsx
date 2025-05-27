@@ -4,8 +4,11 @@ import ProductCard from "./components/features/product-card/ProductCard";
 import { DataContext } from "./context/DataProvider";
 import ProductPage from "./pages/ProductPage";
 import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
+import CategorySection from "./components/features/CategorySection"
 
 function App() {
+  const apiData = useContext(DataContext)
+
 
   const router = createBrowserRouter([
     {
@@ -52,6 +55,7 @@ function App() {
     <>
       <h1 className="text-3xl font-bold bg-red-800">Team Red</h1>
       <TrendingSection />
+      <CategorySection />
       <RouterProvider router={router} />
     </>
   );
