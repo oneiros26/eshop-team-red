@@ -20,7 +20,7 @@ export default function Header() {
       </div>
 
       <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
-        <Link to="/">Hlavní strana</Link>
+        <Link to="/">Domov</Link>
         <Link to="/products">Produkty</Link>
         <Link to="/contact">Kontakt</Link>
       </div>
