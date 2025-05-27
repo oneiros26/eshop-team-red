@@ -1,54 +1,104 @@
-import TrendingSection from "./components/features/TrendingSection";
+import TrendingSection from "./components/features/trendingsection";
 import ProductPage from "./pages/ProductPage";
 import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import CheckoutForm from "./pages/CheckoutForm";
 import AddressForm from "./pages/AddressForm";
 import Payment from "./pages/PaymentForm";
+import Header from "./components/common/header/Header";
+import CategorySection from "./components/features/CategorySection";
 import OrderConfirm from "./pages/OrderConfirm";
 import HeroSection from "./components/features/HeroSection";
+import ContactForm from "./pages/ContactForm";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
-        <main>
-          <TrendingSection />
-        </main>
+        <>
+          <Header />
+          <main>
+            <HeroSection />
+            <CategorySection />
+            <TrendingSection />
+            <p className="w-full h-100 bg-blue-200">FOOTER COMPONENT</p>{" "}
+            {/* TO-DO */}
+          </main>
+        </>
       ),
       errorElement: <p>Error 404, page not found. How did you get here?</p>,
     },
     {
       path: "/product/:productId",
-      element: <ProductPage />,
+      element: (
+        <>
+          <Header />
+          <ProductPage />
+        </>
+      ),
     },
     {
       path: "/cart",
-      element: <p>CART COMPONENT</p>, // TO-DO
+      element: (
+        <>
+          <Header />
+          <p>CART COMPONENT</p> {/* TO-DO */}
+        </>
+      ),
     },
     {
       path: "/checkout/step-1",
-      element: <CheckoutForm />,
+      element: (
+        <>
+          <Header />
+          <CheckoutForm />
+        </>
+      ),
     },
     {
       path: "/checkout/step-2",
-      element: <AddressForm />,
+      element: (
+        <>
+          <Header />
+          <AddressForm />
+        </>
+      ),
     },
     {
       path: "/checkout/step-3",
-      element: <Payment />,
+      element: (
+        <>
+          <Header />
+          <Payment />
+        </>
+      ),
     },
     {
       path: "/checkout/step-4",
-      element: <OrderConfirm />,
+      element: (
+        <>
+          <Header />
+          <OrderConfirm />,
+        </>
+      ),
     },
     {
       path: "/all-products",
-      element: <p>CHECKOUT COMPONENT</p>, // TO-DO
+      element: (
+        <>
+          <Header />
+          <p>ALL PRODUCTS COMPONENT</p> {/* TO-DO */}
+        </>
+      ),
     },
     {
       path: "/contact",
-      element: "",
+      element: (
+        <>
+          <Header />
+          <ContactForm />
+        </>
+      ),
     },
   ]);
 
