@@ -1,3 +1,4 @@
+import TrendingSection from "./components/features/trendingsection";
 import React, { useContext } from "react";
 import ProductCard from "./components/features/product-card/ProductCard";
 import { DataContext } from "./context/DataProvider";
@@ -8,7 +9,6 @@ import AddressForm from "./components/features/AddressForm";
 import Payment from "./components/features/Payment";
 
 function App() {
-  const apiData = useContext(DataContext);
 
   const router = createBrowserRouter([
     {
@@ -71,6 +71,8 @@ function App() {
 
   return (
     <>
+      <h1 className="text-3xl font-bold bg-red-800">Team Red</h1>
+      <TrendingSection />
       <RouterProvider router={router} />
     </>
   );
