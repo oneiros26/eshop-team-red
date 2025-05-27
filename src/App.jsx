@@ -8,8 +8,11 @@ import CheckoutForm from "./pages/CheckoutForm";
 import AddressForm from "./components/features/AddressForm";
 import Payment from "./components/features/Payment";
 import Header from "./components/common/header/Header"
+import CategorySection from "./components/features/CategorySection"
 
 function App() {
+  const apiData = useContext(DataContext)
+
 
   const router = createBrowserRouter([
     {
@@ -94,6 +97,7 @@ function App() {
 
   return (
     <>
+      
       <RouterProvider router={router} />
     </>
   );
