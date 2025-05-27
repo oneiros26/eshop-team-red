@@ -8,6 +8,11 @@ export default function Header() {
 
   return (
     <header className="header">
+      <ul>
+      <Li>Domov</Li>
+      <Li>Produkty</Li>
+      <Li>Kontakty</Li>
+      </ul>
       <div className="header-left">
         <img src="https://fullsend.agency/wp-content/uploads/2024/10/ferrari-logo.jpg" alt="logo" className="header-logo" />
         <button
