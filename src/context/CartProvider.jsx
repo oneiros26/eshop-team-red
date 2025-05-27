@@ -56,7 +56,25 @@ function CartProvider({ children }) {
         }
     }
 
-    return <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, incrementQuantity, decrementQuantity }}>
+    function modifyQuantity(event, id) {
+        const newQuantity = Number(event.target.value);
+
+        if (isNaN(newQuantity) || newQuantity > 3 || newQuantity < 0)
+            console.log('Invalid quantity');
+        else if (newQuantity === 0)
+            removeFromCart(id)
+        else {
+            setCartItems((prev) =>
+                prev.map(prevItem =>
+                    prevItem.id === id
+                        ? { ...prevItem, quantity: newQuantity }
+                        : prevItem
+                )
+            );
+        }
+    }
+
+    return <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, incrementQuantity, decrementQuantity, modifyQuantity }}>
         {children}
     </CartContext.Provider>
 }
