@@ -43,9 +43,10 @@ function TrendingSection() {
             key={product.id}
           >
             <ProductCard
-              image={product.image}
-              title={product.title}
-              price={product.price}
+                image={product.image}
+                title={product.title}
+                price={product.price}
+                id={product.id}
             />
           </SwiperSlide>
         ))}
