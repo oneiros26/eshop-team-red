@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import { CartContext } from '../../context/CartProvider';
+import { Link } from 'react-router-dom';
 
 
 function ProductCard({ image, title, price, id }) {
@@ -8,16 +9,18 @@ function ProductCard({ image, title, price, id }) {
 
   return (
     <div className="flex-shrink-0 flex flex-col items-center justify-between w-[200px] h-[300px] p-3 bg-[#ffffff] rounded-3xl m-2 hover:shadow">
-      <img
-        className="w-full aspect-square bg-[#656565] rounded-2xl object-cover mb-1"
-        src={image}
-        alt="obrázek produktu"
-      />
-      <div className="w-full relative p-1 flex flex-col items-start">
-        <h3 className="text-black font-normal text-[14px] leading-normal mt-[-4px] font-inter line-clamp-2">
-          {title}
-        </h3>
-      </div>
+      <Link to={`/product/${id}`} className="no-underline">
+        <img
+          className="w-full aspect-square bg-[#656565] rounded-2xl object-cover mb-1"
+          src={image}
+          alt="obrázek produktu"
+        />
+        <div className="w-full relative p-1 flex flex-col items-start">
+          <h3 className="text-black font-normal text-[14px] leading-normal mt-[-4px] font-inter line-clamp-2">
+            {title}
+          </h3>
+        </div>
+      </Link>
       <div className="w-full flex justify-between items-center p-1 relative">
         <p className="text-black font-normal text-[12px] leading-normal font-inter">
           {price}₹
