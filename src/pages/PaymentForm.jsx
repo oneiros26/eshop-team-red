@@ -1,23 +1,20 @@
-import React, { useState } from "react";
-import FormInput from "../common/form-fields/FormInput";
+import FormInput from "../components/common/form-fields/FormInput";
+import { useOrderData } from "../context/OrderDataProvider";
+import { useNavigate } from "react-router-dom";
 
 function Payment() {
-  const [formValues, setFormValues] = useState({
-    fullName: "",
-    cardNumber: "",
-    expiration: "",
-    ccv: "",
-  });
+  const { formValues, setFormValues } = useOrderData();
+  const navigate = useNavigate();
 
   const inputs = [
     {
       id: 1,
-      name: "fullName",
+      name: "cardName",
       type: "text",
       placeholder: "Enter your name..",
       errorMessage: "Text cannot contain special characters.",
-      label: "Full Name (as displayed on card)*",
-      pattern: "^[\\w]$",
+      label: "Full Name*",
+      pattern: "^[\\w ]{1,50}$",
       required: true,
     },
     {
@@ -51,6 +48,7 @@ function Payment() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate("/checkout/step-4");
   };
 
   const onChange = (e) => {
@@ -58,22 +56,30 @@ function Payment() {
   };
 
   return (
-    <section className="w-full h-screen flex justify-center items-center flex-col gap-3">
+    <main className="w-full h-screen flex justify-center items-center flex-col gap-3">
       <h1 className="text-3xl text-slate-900 font-bold">Payment</h1>
       <form
-        className="grid grid-cols-2 grid-rows-2 gap-4 items-start w-3/4"
+        className="flex flex-col gap-4 items-start w-1/2"
         onSubmit={handleSubmit}
       >
-        {inputs.map((input) => (
-          <FormInput
-            key={input.id}
-            {...input}
-            value={formValues[input.name]}
-            onChange={onChange}
-          />
-        ))}
+        <div className="grid grid-cols-2 grid-rows-2 gap-4 items-start w-full">
+          {inputs.map((input) => (
+            <FormInput
+              key={input.id}
+              {...input}
+              value={formValues[input.name]}
+              onChange={onChange}
+            />
+          ))}
+        </div>
+        <button
+          className="cursor-pointer w-30 h-15 bg-green-400 hover:bg-green-500 rounded-lg self-center text-xl mt-8"
+          type="submit"
+        >
+          Submit
+        </button>
       </form>
-    </section>
+    </main>
   );
 }
 

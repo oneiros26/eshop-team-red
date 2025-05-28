@@ -16,27 +16,29 @@ function TrendingSection() {
   );
 
   return (
-    <div>
-      <h2>Trending</h2>
+    <div className="my-10">
+      <h2 className="text-center font-semibold text-5xl p-8">Trending</h2>
       <Swiper
         spaceBetween={20}
         slidesPerView={"5"}
         autoplay={{
-          delay: 1000,
+          delay: 1500,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
         loop={true}
         modules={[Autoplay]}
-        style={{ backgroundColor: "green" }}
+        style={{ backgroundColor: "white" }}
+        speed={2000}
       >
         {trendingProducts.map((product) => (
           <SwiperSlide
             style={{
               width: "220px",
-              backgroundColor: "yellow",
+              backgroundColor: "#dbeafe",
               display: "flex",
               justifyContent: "center",
+              padding: "1rem",
             }}
             key={product.id}
           >

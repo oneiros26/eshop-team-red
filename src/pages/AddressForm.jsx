@@ -1,16 +1,11 @@
-import FormInput from "../common/form-fields/FormInput";
-import FormSelect from "../common/form-fields/FormSelect";
-import Textarea from "../common/form-fields/Textarea";
-import React, { useState } from "react";
+import FormInput from "../components/common/form-fields/FormInput";
+import FormSelect from "../components/common/form-fields/FormSelect";
+import { useOrderData } from "../context/OrderDataProvider";
+import { useNavigate } from "react-router-dom";
 
 function AddressForm() {
-  const [formValues, setFormValues] = useState({
-    email: "",
-    fullName: "",
-    address: "",
-    country: "",
-    zipCode: "",
-  });
+  const { formValues, setFormValues } = useOrderData();
+  const navigate = useNavigate();
 
   const inputs = [
     {
@@ -24,12 +19,12 @@ function AddressForm() {
     },
     {
       id: 2,
-      name: "fullName",
+      name: "name",
       type: "text",
       placeholder: "Enter your name..",
       errorMessage: "Text is too long or uses special characters.",
       label: "Full Name",
-      pattern: "^[\\w]$",
+      pattern: "^[\\w ]{1,50}$",
       required: true,
     },
     {
@@ -39,7 +34,7 @@ function AddressForm() {
       placeholder: "Enter your address..",
       errorMessage: "Text is too long or uses special characters.",
       label: "Address",
-      pattern: "^[\\w]$",
+      pattern: "^[\\w \\/]{1,50}$",
       required: true,
     },
     {
@@ -122,6 +117,7 @@ function AddressForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate(`/checkout/step-3`);
   };
 
   const onChange = (e) => {
@@ -151,6 +147,12 @@ function AddressForm() {
             onChange={onChange}
           />
         ))}
+        <button
+          className="cursor-pointer w-45 h-15 bg-blue-400 hover:bg-blue-500 rounded-lg self-center text-xl mt-8"
+          type="submit"
+        >
+          Confirm Address
+        </button>
       </form>
     </section>
   );

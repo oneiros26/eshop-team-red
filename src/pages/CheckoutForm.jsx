@@ -1,16 +1,14 @@
-import FormInput from "../components/common/form-fields/FormInput";
-import FormSelect from "../components/common/form-fields/FormSelect";
-import Textarea from "../components/common/form-fields/Textarea";
-import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useOrderData } from "../context/OrderDataProvider";
 
 function CheckoutForm() {
-  const [formValues, setFormValues] = useState({
-    delivery: "",
-    payment: "",
-  });
+  const { formValues, setFormValues } = useOrderData();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    navigate(`/checkout/step-2`);
   };
 
   const onChange = (e) => {
@@ -18,11 +16,12 @@ function CheckoutForm() {
   };
 
   return (
-    <section className="w-full h-screen flex justify-center items-center flex-col gap-3">
+    <main className="w-full h-screen flex justify-center items-center flex-col gap-3">
       <h1 className="text-3xl text-slate-900 font-bold">Checkout</h1>
       <form
         className="flex flex-col gap-4 items-start w-1/4"
         onSubmit={handleSubmit}
+        onChange={onChange}
       >
         <div>
           <h2 className="text-2xl text-slate-800 font-semibold mb-2">
@@ -30,17 +29,17 @@ function CheckoutForm() {
           </h2>
           <div className="flex gap-2">
             <input type="radio" name="delivery" value="standard" />
-            <label for="standard">Standard Delivery - 80$</label>
+            <label htmlFor="standard">Standard Delivery - 80$</label>
           </div>
 
           <div className="flex gap-2">
             <input type="radio" name="delivery" value="express" />
-            <label for="express">Express Delivery - 120$</label>
+            <label htmlFor="express">Express Delivery - 120$</label>
           </div>
 
           <div className="flex gap-2">
             <input type="radio" name="delivery" value="store" />
-            <label for="same-day">Store Pickup - Free</label>
+            <label htmlFor="same-day">Store Pickup - Free</label>
           </div>
         </div>
 
@@ -50,27 +49,27 @@ function CheckoutForm() {
           </h2>
           <div className="flex gap-2">
             <input type="radio" name="payment" value="applepay" />
-            <label for="applepay">ApplePay</label>
+            <label htmlFor="applepay">ApplePay</label>
           </div>
 
           <div className="flex gap-2">
             <input type="radio" name="payment" value="googlepay" />
-            <label for="googlepay">GooglePay</label>
+            <label htmlFor="googlepay">GooglePay</label>
           </div>
 
           <div className="flex gap-2">
             <input type="radio" name="payment" value="paypal" />
-            <label for="paypal">PayPal</label>
+            <label htmlFor="paypal">PayPal</label>
           </div>
 
           <div className="flex gap-2">
             <input type="radio" name="payment" value="visa" />
-            <label for="visa">Visa</label>
+            <label htmlFor="visa">Visa</label>
           </div>
 
           <div className="flex gap-2">
             <input type="radio" name="payment" value="mastercard" />
-            <label for="mastercard">Mastercard</label>
+            <label htmlFor="mastercard">Mastercard</label>
           </div>
         </div>
         <button
@@ -80,7 +79,7 @@ function CheckoutForm() {
           Submit
         </button>
       </form>
-    </section>
+    </main>
   );
 }
 

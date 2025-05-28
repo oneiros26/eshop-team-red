@@ -1,8 +1,8 @@
-import img from "../../../assets/heroImige.webp";
+import img from "../../assets/heroImage.webp";
 
 function HeroSection() {
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen mt-16">
       <img src={img} alt="Pozadí" className="w-full h-full object-cover" />
 
       <div className="absolute top-0 left-0 w-1/2 h-full flex items-center justify-start">
@@ -18,7 +18,7 @@ function HeroSection() {
             Pro závodní adrenalin i elegantní dominanci na silnici. Vaše vášeň
             začíná zde.
           </p>
-          <button className="overlay-button whitespace-nowrap absolute -bottom-20 left bg-blue-700/80 hover:bg-blue-600 text-white py-3 px-6 text-lg rounded-lg hover:opacity-100 transition-opacity duration-300">
+          <button className="cursor-pointer overlay-button whitespace-nowrap absolute -bottom-20 left bg-blue-700/80 hover:bg-blue-600 text-white py-3 px-6 text-lg rounded-lg hover:opacity-100 transition-opacity duration-300">
             Přejdi na trending produkty.
           </button>
         </div>
