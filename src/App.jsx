@@ -27,6 +27,7 @@ function App() {
             <p className="w-full h-100 bg-blue-200">FOOTER COMPONENT</p>{" "}
             {/* TO-DO */}
           </main>
+          <Footer />
         </>
       ),
       errorElement: <p>Error 404, page not found. How did you get here?</p>,
