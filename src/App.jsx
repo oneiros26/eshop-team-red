@@ -24,8 +24,6 @@ function App() {
             <CategorySection />
             <TrendingSection />
             <Testimonials />
-            <p className="w-full h-100 bg-blue-200">FOOTER COMPONENT</p>{" "}
-            {/* TO-DO */}
           </main>
           <Footer />
         </>
