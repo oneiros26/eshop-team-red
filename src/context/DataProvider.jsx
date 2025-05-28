@@ -4,7 +4,7 @@ export const DataContext = createContext();
 
 function DataProvider({ children }) {
     const [data, setData] = useState([]);
-    const API_URL = 'https://fakestoreapi.com/products';
+    const API_URL = 'http://localhost:5000/api/products'; //https://fakestoreapi.com/products
 
     useEffect(() => {
         const fetchData = async () => {
