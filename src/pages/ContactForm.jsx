@@ -17,8 +17,8 @@ function ContactForm() {
       id: 1,
       name: "email",
       type: "email",
-      placeholder: "Enter email..",
-      errorMessage: "Invalid email",
+      placeholder: "Potvrďte email..",
+      errorMessage: "Nesprávný email",
       label: "Email",
       required: true,
     },
@@ -26,9 +26,9 @@ function ContactForm() {
       id: 2,
       name: "subject",
       type: "text",
-      placeholder: "Enter subject..",
-      errorMessage: "Text is too long or uses special characters.",
-      label: "Subject",
+      placeholder: "Potvrďte předmět..",
+      errorMessage: "Text je příliš dlouhý nebo používá speciální charaktery.",
+      label: "Předmět",
       pattern: "^[\\w\\W]{1,15}$",
       required: true,
     },
@@ -38,23 +38,23 @@ function ContactForm() {
     {
       id: 3,
       name: "country",
-      errorMessage: "You need to select one.",
-      label: "Where are you from?",
+      errorMessage: "Země nebyla vybrána.",
+      label: "Odkud jste?",
       required: true,
-      options: ["Europe", "US", "Other"],
+      options: ["Evropa", "US", "Jiné"],
     },
     {
       id: 4,
       name: "issue",
-      errorMessage: "You need to select one.",
-      label: "Issue",
+      errorMessage: "Problém nebyl vybrán.",
+      label: "Problém",
       required: true,
       options: [
-        "Cancel Order (not yet shipped)",
-        "Return for a Refund",
-        "Website Question",
-        "Product Question",
-        "Product Defect",
+        "Zrušit objednávku (ještě nebyla odeslána)",
+        "Vrátit zboží a požádat o vrácení peněz",
+        "Dotaz na webové stránky",
+        "Dotaz na produkt",
+        "Vada produktu",
       ],
     },
   ];
@@ -69,7 +69,7 @@ function ContactForm() {
 
   return (
     <section className="w-full h-screen flex justify-center items-center flex-col gap-3">
-      <h1 className="text-3xl text-slate-900 font-bold">Contact Us</h1>
+      <h1 className="text-3xl text-slate-900 font-bold">Kontaktujte nás</h1>
       <form
         className="flex flex-col gap-4 items-start w-1/4"
         onSubmit={handleSubmit}
@@ -95,11 +95,10 @@ function ContactForm() {
           className="cursor-pointer w-20 h-10 bg-green-400 hover:bg-green-500 rounded-sm self-center"
           type="submit"
         >
-          Submit
+          Odeslat
         </button>
       </form>
     </section>
   );
 }
-
 export default ContactForm;
