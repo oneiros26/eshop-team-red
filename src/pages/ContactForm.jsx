@@ -68,10 +68,36 @@ function ContactForm() {
   };
 
   return (
-    <section className="w-full h-screen flex justify-center items-center flex-col gap-3">
-      <h1 className="text-3xl text-slate-900 font-bold">Kontaktujte nás</h1>
-      <form
-        className="flex flex-col gap-4 items-start w-1/4"
+    <section className="bg-blue-100 w-full h-screen flex justify-center items-center flex-col">
+      <h1 className="border-b border-gray-400 p-2 rounded-t-xl bg-white text-3xl text-slate-900 font-bold mt-7"> Kontaktujte nás</h1>
+      <div className="bg-white flex flex-row gap-4 w-1/1 md:w-1/2 mx-auto rounded-xl">
+        <div className="gap-4 w-1/2 mt-5 ml-4">
+        <p>
+          📧 E-mail:<br/>
+info@autoformula.cz<br/>
+<br/>
+📞 Telefon:<br/>
++420 777 456 789 (Po–Pá 9:00–17:00)<br/>
+<br/>
+📍 Adresa (výdejní místo):<br/>
+AutoFormula s.r.o.<br/>
+Pole Position 123, 170 00 Praha 7<br/>
+<br/>
+Sociální sítě<br/>
+🌐 Web: www.autoformula.cz<br/>
+📸 Instagram: @autoformula_cz<br/>
+📘 Facebook: AutoFormula CZ<br/>
+📺 YouTube: AutoFormula TV – testy a unboxingy<br/>
+🐦 Twitter/X: @AutoFormulaCZ<br/><br/>
+✉️ Otevírací doba zákaznické podpory<br/>
+Po–Pá: 9:00 – 17:00<br/>
+So–Ne: Zavřeno<br/>
+Reakce do 24 h ve všední dny<br/>
+        </p>
+        </div>
+        <div>
+        <form
+        className="flex flex-col gap-4 items-start mt-2"
         onSubmit={handleSubmit}
       >
         {inputs.map((input) => (
@@ -92,12 +118,14 @@ function ContactForm() {
         ))}
         <Textarea />
         <button
-          className="cursor-pointer w-20 h-10 bg-green-400 hover:bg-green-500 rounded-sm self-center"
+          className="cursor-pointer w-20 h-10 bg-green-400 hover:bg-green-500 rounded-sm self-center mb-4"
           type="submit"
         >
           Odeslat
         </button>
       </form>
+        </div>
+      </div>
     </section>
   );
 }
