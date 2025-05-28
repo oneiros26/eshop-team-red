@@ -1,3 +1,5 @@
+import './footer.css';
+
 // src/components/common/footer/Footer.jsx
 export default function Footer() {
   return (
