@@ -25,7 +25,7 @@ function ProductCard({ image, title, price, id }) {
         <button onClick={() => addToCart(id)} className="bg-blue-500 w-[32px] h-[32px] rounded-full relative flex items-center justify-center">
           <img
             className="w-[24px] h-[24px]"
-            src="../src/assets/icons/icons8-lease-30.png"
+            src="../src/assets/icons/plus.png"
             alt="icon"
           />
         </button>
