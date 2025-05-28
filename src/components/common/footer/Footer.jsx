@@ -25,7 +25,7 @@ export default function Footer() {
         {/* Kontakt */}
         <div>
           <h3 className="font-bold mb-2">Kontakt</h3>
-          <p>Email: info@eshop.cz</p>
+          <p>Email: info@autoformula.cz</p>
           <p>Telefon: +420 123 456 789</p>
         </div>
       </div>
