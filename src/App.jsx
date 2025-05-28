@@ -1,27 +1,31 @@
 import TrendingSection from "./components/features/trendingsection";
-import React, { useContext } from "react";
-import { DataContext } from "./context/DataProvider";
 import ProductPage from "./pages/ProductPage";
 import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import CheckoutForm from "./pages/CheckoutForm";
-import AddressForm from "./components/features/AddressForm";
-import Payment from "./components/features/Payment";
-import Header from "./components/common/header/Header"
-import CategorySection from "./components/features/CategorySection"
+import AddressForm from "./pages/AddressForm";
+import Payment from "./pages/PaymentForm";
+import Header from "./components/common/header/Header";
+import CategorySection from "./components/features/CategorySection";
+import OrderConfirm from "./pages/OrderConfirm";
+import HeroSection from "./components/features/HeroSection";
+import ContactForm from "./pages/ContactForm";
+import Testimonials from "./components/common/Testimonials";
+import Footer from './components/common/footer/Footer'; 
 
 function App() {
-  const apiData = useContext(DataContext)
-
-
   const router = createBrowserRouter([
     {
-
       path: "/",
       element: (
         <>
-          <Header></Header>
+          <Header />
           <main>
+            <HeroSection />
+            <CategorySection />
             <TrendingSection />
+            <Testimonials />
+            <p className="w-full h-100 bg-blue-200">FOOTER COMPONENT</p>{" "}
+            {/* TO-DO */}
           </main>
         </>
       ),
@@ -31,74 +35,79 @@ function App() {
       path: "/product/:productId",
       element: (
         <>
-          <Header></Header>
+          <Header />
           <ProductPage />
         </>
-      )
+      ),
     },
     {
       path: "/cart",
       element: (
         <>
-          <Header></Header>
-          <p>CART COMPONENT</p>
+          <Header />
+          <p>CART COMPONENT</p> {/* TO-DO */}
         </>
-      )
+      ),
     },
     {
       path: "/checkout/step-1",
       element: (
         <>
-          <Header></Header>
+          <Header />
           <CheckoutForm />
         </>
-      )
+      ),
     },
     {
       path: "/checkout/step-2",
       element: (
         <>
-          <Header></Header>
-          <main className="flex flex-col h-screen gap-10 w-full">
-            <section className="flex gap-10 w-full h-auto">
-              <AddressForm />
-              <Payment />
-            </section>
-            <button
-              className="cursor-pointer w-30 h-15 bg-green-400 hover:bg-green-500 rounded-lg self-center text-xl fixed bottom-5"
-              type="submit"
-            >
-              Submit
-            </button>
-          </main>
+          <Header />
+          <AddressForm />
         </>
-      )
+      ),
     },
     {
       path: "/checkout/step-3",
       element: (
         <>
-          <Header></Header>
-          <p>CONFIRM COMPONENT</p>
+          <Header />
+          <Payment />
         </>
-      )
+      ),
+    },
+    {
+      path: "/checkout/step-4",
+      element: (
+        <>
+          <Header />
+          <OrderConfirm />,
+        </>
+      ),
     },
     {
       path: "/all-products",
       element: (
         <>
-          <Header></Header>
-          <p>CHECKOUT COMPONENT</p>
+          <Header />
+          <p>ALL PRODUCTS COMPONENT</p> {/* TO-DO */}
         </>
-      )
+      ),
+    },
+    {
+      path: "/contact",
+      element: (
+        <>
+          <Header />
+          <ContactForm />
+        </>
+      ),
     },
   ]);
 
   return (
     <>
       <RouterProvider router={router} />
-      <CategorySection />
-      <TrendingSection />
     </>
   );
 }
