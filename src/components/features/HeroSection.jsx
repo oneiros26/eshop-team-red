@@ -1,4 +1,4 @@
-import img from "../../assets/heroImage.webp";
+import img from "../../assets/SF-24-Launch-GIF-2_2048x2048-xd.webp";
 
 function HeroSection() {
   return (
