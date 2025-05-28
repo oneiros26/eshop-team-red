@@ -10,8 +10,9 @@ import OrderConfirm from "./pages/OrderConfirm";
 import HeroSection from "./components/features/HeroSection";
 import ContactForm from "./pages/ContactForm";
 import Testimonials from "./components/common/Testimonials";
-import Footer from './components/common/footer/Footer'; 
+import Footer from './components/common/footer/Footer';
 import AllProducts from "./components/features/AllProducts";
+import Cart from "./components/features/Cart"
 
 function App() {
   const router = createBrowserRouter([
@@ -45,7 +46,7 @@ function App() {
       element: (
         <>
           <Header />
-          <p>CART COMPONENT</p> {/* TO-DO */}
+          <Cart></Cart>
         </>
       ),
     },
