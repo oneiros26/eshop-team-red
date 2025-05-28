@@ -11,6 +11,7 @@ import HeroSection from "./components/features/HeroSection";
 import ContactForm from "./pages/ContactForm";
 import Testimonials from "./components/common/Testimonials";
 import Footer from './components/common/footer/Footer'; 
+import AllProducts from "./components/features/AllProducts";
 
 function App() {
   const router = createBrowserRouter([
@@ -89,7 +90,7 @@ function App() {
       element: (
         <>
           <Header />
-          <p>ALL PRODUCTS COMPONENT</p> {/* TO-DO */}
+          <AllProducts />
         </>
       ),
     },
