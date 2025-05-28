@@ -11,6 +11,7 @@ import HeroSection from "./components/features/HeroSection";
 import ContactForm from "./pages/ContactForm";
 import Testimonials from "./components/common/Testimonials";
 import AllProducts from "./components/features/AllProducts";
+import ProductFilter from "./components/features/ProductFilter";
 
 function App() {
   const router = createBrowserRouter([
@@ -90,6 +91,7 @@ function App() {
       element: (
         <>
           <Header />
+          <ProductFilter />
           <AllProducts />
         </>
       ),
