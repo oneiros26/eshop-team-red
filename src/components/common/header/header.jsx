@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import cartIconClosed from "./../../../assets/icons/cartIconClosed.png";
 import cartIconOpen from "./../../../assets/icons/cartIconOpen.png";
 import CartSidebar from "./CartSidebar";
+import Logo from "../../../assets/logo.png"
+
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +19,7 @@ function Header() {
       <Link to="/">
         <img
           className="h-10 w-auto object-contain"
-          src="https://fullsend.agency/wp-content/uploads/2024/10/ferrari-logo.jpg"
+          src={Logo}
           alt="logo"
         />
       </Link>
