@@ -1,7 +1,9 @@
+import img from "../assets/contactForm1.gif";
 import FormInput from "../components/common/form-fields/FormInput";
 import FormSelect from "../components/common/form-fields/FormSelect";
 import Textarea from "../components/common/form-fields/Textarea";
 import React, { useState } from "react";
+
 
 function ContactForm() {
   const [formValues, setFormValues] = useState({
@@ -68,9 +70,11 @@ function ContactForm() {
   };
 
   return (
-    <section className="bg-blue-100 w-full h-screen flex justify-center items-center flex-col">
-      <h1 className="border-b border-gray-400 p-2 rounded-t-xl bg-white text-3xl text-slate-900 font-bold mt-7"> Kontaktujte nás</h1>
-      <div className="bg-white flex flex-row gap-4 w-1/1 md:w-1/2 mx-auto rounded-xl">
+    <div className="relative w-full h-screen overflow-hidden">
+      <img src={img} alt="Pozadí" className="absolute top-0 left-0 w-full h-full object-cover z-0" />
+    <section className="w-full h-screen flex justify-center items-center flex-col relative z-10">
+      <h1 className="border-b border-gray-400 p-2 rounded-t-xl bg-white/80 text-3xl text-black font-bold mt-7"> Kontaktujte nás</h1>
+      <div className="bg-white/80 flex flex-row gap-4 w-1/1 md:w-1/2 mx-auto rounded-xl">
         <div className="gap-4 w-1/2 mt-5 ml-4">
         <p>
           📧 E-mail:<br/>
@@ -127,6 +131,7 @@ Reakce do 24 h ve všední dny<br/>
         </div>
       </div>
     </section>
+    </div>
   );
 }
 export default ContactForm;
