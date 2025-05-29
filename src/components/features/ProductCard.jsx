@@ -8,7 +8,7 @@ function ProductCard({ image, title, price, id }) {
   const {addToCart} = useContext(CartContext);
 
   return (
-    <div className="flex-shrink-0 flex flex-col items-center justify-between w-[200px] h-[300px] p-3 bg-[#ffffff] rounded-3xl m-2 hover:shadow">
+    <div className="flex-shrink-0 flex flex-col items-center justify-between w-[200px] h-[300px] p-3 bg-[#d8d8d8] rounded-3xl m-2 hover:shadow-lg transition-shadow duration-300 ease-in-out">
       <Link to={`/product/${id}`} className="no-underline">
         <img
           className="w-full aspect-square bg-[#656565] rounded-2xl object-cover mb-1"

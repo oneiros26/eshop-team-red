@@ -20,7 +20,7 @@ function TrendingSection() {
   );
 
   return (
-    <div className="my-10">
+    <div className="my-10 max-w-[1280px] mx-auto">
       <h2 className="text-center font-semibold text-5xl p-8">Oblíbené</h2>
       <Swiper
         spaceBetween={40}
