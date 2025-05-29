@@ -10,6 +10,7 @@ import OrderConfirm from "./pages/OrderConfirm";
 import HeroSection from "./components/features/HeroSection";
 import ContactForm from "./pages/ContactForm";
 import Testimonials from "./components/common/Testimonials";
+import Footer from './components/common/footer/Footer'; 
 import AllProducts from "./components/features/AllProducts";
 import ProductFilter from "./components/features/ProductFilter";
 
@@ -25,9 +26,8 @@ function App() {
             <CategorySection />
             <TrendingSection />
             <Testimonials />
-            <p className="w-full h-100 bg-blue-200">FOOTER COMPONENT</p>{" "}
-            {/* TO-DO */}
           </main>
+          <Footer />
         </>
       ),
       errorElement: <p>Error 404, page not found. How did you get here?</p>,
