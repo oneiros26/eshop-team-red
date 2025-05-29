@@ -7,13 +7,14 @@ import { Autoplay } from "swiper/modules";
 import FormulaImage from "../../assets/category-photos/ayumu-iwasa-team-mugen.jpg";
 import GroupGt3 from "../../assets/category-photos/group-gt3.jpg";
 import CarLoop from "../../assets/category-photos/car-loop.jpg";
+import Nascar from "../../assets/category-photos/nascar.jpg";
 
 function TrendingSection() {
   const slides = [
-    {title: "Formula 1", image: FormulaImage},
-    {title: "Group GT3", image: GroupGt3},
-    {title: "\"special\"", image: CarLoop},
-  ]
+    { title: "Formula 1", image: FormulaImage },
+    { title: "Group GT3", image: GroupGt3 },
+    { title: "Nascar", image: Nascar },
+  ];
 
   const duplicatedSlides = [...slides, ...slides, ...slides];
 
@@ -23,9 +24,9 @@ function TrendingSection() {
       <Swiper
         breakpoints={{
           640: { slidesPerView: 1, spaceBetween: 16 },
-      800: { slidesPerView: 2, spaceBetween: 16 },
-      1200: { slidesPerView: 3, spaceBetween: 16 },
-      1300: { slidesPerView: 3, spaceBetween: 0 },
+          800: { slidesPerView: 2, spaceBetween: 16 },
+          1200: { slidesPerView: 3, spaceBetween: 16 },
+          1300: { slidesPerView: 3, spaceBetween: 0 },
         }}
         autoplay={{
           delay: 4000,
