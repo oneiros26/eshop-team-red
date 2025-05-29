@@ -13,6 +13,7 @@ import Testimonials from "./components/common/Testimonials";
 import Footer from './components/common/footer/Footer'; 
 import AllProducts from "./components/features/AllProducts";
 
+
 function App() {
   const router = createBrowserRouter([
     {
