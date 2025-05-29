@@ -11,8 +11,8 @@ function Cart() {
     return (
         <>
             {cartItems.length !== 0
-                ? (<h2 className="text-gray-700 text-xl font-semibold p-4">Váš košík</h2>)
-                : (<div className="absolute inset-0 items-center justify-center flex flex-col gap-5"><img className="w-1/3 opacity-50" src={cartIconOpen} alt="cart Icon" /><h2 className="text-gray-500 text-sm font-semibold">Váš košík je prázdný</h2></div>
+                ? (<div className="mt-16 flex gap-3"><h2 className="text-gray-700 text-xl font-semibold p-4">Obsah košíku</h2><p>&#40; {cartItems.length} zboží &#41;</p></div>)
+                : (<div className="absolute inset-0 items-center justify-center flex flex-col gap-5"><img className="w-1/5 opacity-50" src={cartIconOpen} alt="cart Icon" /><h2 className="text-gray-500 text-sm font-semibold">Váš košík je prázdný</h2></div>
                 )}
             < ul className="flex flex-col gap-3" >
                 {
