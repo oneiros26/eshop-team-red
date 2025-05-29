@@ -17,10 +17,16 @@ function TrendingSection() {
 
   return (
     <div className="my-10">
-      <h2 className="text-center font-semibold text-5xl p-8">Trending</h2>
+      <h2 className="text-center font-semibold text-5xl p-8">Oblíbené</h2>
       <Swiper
+        breakpoints={{
+          340: { slidesPerView: 1 },
+          500: { slidesPerView: 2 },
+          700: { slidesPerView: 3 },
+          1000:{ slidesPerView: 4 },
+          1300:{ slidesPerView: 5 },
+        }}
         spaceBetween={20}
-        slidesPerView={"5"}
         autoplay={{
           delay: 1500,
           disableOnInteraction: false,
