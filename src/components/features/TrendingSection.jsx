@@ -9,7 +9,11 @@ import { Autoplay } from "swiper/modules";
 function TrendingSection() {
   const apiData = useContext(DataContext);
 
-  const selectedIds = [8, 6, 9, 12, 7, 2];
+  console.log("ids", apiData.map((product) => product.id));
+
+  const ids = apiData.map((product) => product.id)
+
+  const selectedIds = [ids[0], ids[1], ids[2], ids[3], ids[4], ids[5], ids[6], ids[7]];
 
   const trendingProducts = apiData.filter((product) =>
     selectedIds.includes(product.id)
@@ -19,14 +23,8 @@ function TrendingSection() {
     <div className="my-10">
       <h2 className="text-center font-semibold text-5xl p-8">Oblíbené</h2>
       <Swiper
-        breakpoints={{
-          340: { slidesPerView: 1 },
-          500: { slidesPerView: 2 },
-          700: { slidesPerView: 3 },
-          1000:{ slidesPerView: 4 },
-          1300:{ slidesPerView: 5 },
-        }}
-        spaceBetween={20}
+        spaceBetween={40}
+        slidesPerView={5}
         autoplay={{
           delay: 1500,
           disableOnInteraction: false,
@@ -36,12 +34,31 @@ function TrendingSection() {
         modules={[Autoplay]}
         style={{ backgroundColor: "white" }}
         speed={2000}
+        grabCursor={true}
+        breakpoints={
+          {
+            320: {
+              slidesPerView: 1,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }
+        }
       >
         {trendingProducts.map((product) => (
           <SwiperSlide
             style={{
-              width: "220px",
-              backgroundColor: "#dbeafe",
+              width: "fit-content",
               display: "flex",
               justifyContent: "center",
               padding: "1rem",
