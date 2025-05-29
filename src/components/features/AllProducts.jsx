@@ -33,7 +33,7 @@ function AllProducts() {
                 <ProductFilter onChange={handleCategoryChange} name={"women's clothing"} value={"women's clothing"}/>
             </div>
             <div className="mt-[64px] flex flex-col text-center items-center justify-center w-9/10">
-                <h1 className="m-[40px] font-bold text-5xl text-gray-800">
+                <h1 className="m-[40px] font-bold text-3xl text-gray-800">
                     all products
                 </h1>
                 <div className="flex flex-wrap justify-center max-w-[1200px] w-full">
