@@ -1,5 +1,3 @@
-import './footer.css';
-
 export default function Footer() {
   return (
     <footer className="bg-blue-200 text-gray-800 py-8 shadow-inner mt-auto">
@@ -7,27 +5,25 @@ export default function Footer() {
         {/* O nás */}
         <div>
           <h3 className="font-bold mb-2">O nás</h3>
-          <p>
-            Jsme tým mladých vývojářů, kteří tvoří moderní e-shopové řešení.
-          </p>
+          <p>Jsme tým mladých vývojářů, kteří tvoří moderní e-shopové řešení.</p>
         </div>
 
-        {/* Odkazy */}
-        <div>
+        {/* Navigace */}
+        <nav>
           <h3 className="font-bold mb-2">Navigace</h3>
           <ul className="space-y-1">
             <li><a href="/" className="hover:underline">Domů</a></li>
             <li><a href="/all-products" className="hover:underline">Produkty</a></li>
             <li><a href="/contact" className="hover:underline">Kontakt</a></li>
           </ul>
-        </div>
+        </nav>
 
         {/* Kontakt */}
-        <div>
+        <address className="not-italic">
           <h3 className="font-bold mb-2">Kontakt</h3>
-          <p>Email: info@autoformula.cz</p>
-          <p>Telefon: +420 777 456 789</p>
-        </div>
+          <p>Email: <a href="mailto:info@autoformula.cz" className="hover:underline">info@autoformula.cz</a></p>
+          <p>Telefon: <a href="tel:+420777456789" className="hover:underline">+420 777 456 789</a></p>
+        </address>
       </div>
 
       <div className="text-center text-xs text-gray-600 mt-6">
