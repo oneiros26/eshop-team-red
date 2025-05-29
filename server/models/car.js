@@ -1,6 +1,8 @@
+// models/car.js
 const mongoose = require('mongoose');
 
-const productSchema = new mongoose.Schema({
+const carSchema = new mongoose.Schema({
+    id: String,
     title: String,
     price: Number,
     description: String,
@@ -12,4 +14,5 @@ const productSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('product', productSchema);
+module.exports = mongoose.model('Car', carSchema, 'cars');
+

@@ -26,6 +26,10 @@ function DataProvider({ children }) {
         fetchData();
     }, [])
 
+    useEffect(() => {
+        console.log('Data:', data);
+    }, [data]);
+
     return <DataContext.Provider value={data}>
         {children}
     </DataContext.Provider>
