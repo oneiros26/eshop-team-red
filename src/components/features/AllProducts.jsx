@@ -8,7 +8,7 @@ function AllProducts() {
     const apiData = useContext(DataContext)
 
     const [selectedIds, setSelectedIds] = useState([]);
-    const [category, setCategory] = useState("all");
+    const [category, setCategory] = useState([]);
 
     useEffect(() => {
         if (apiData && apiData.length > 0) {
@@ -18,9 +18,7 @@ function AllProducts() {
 
     const selectedProducts = apiData
         .filter((product) => selectedIds.includes(product.id))
-        .filter((product) =>
-            category === "all" ? true : product.category === category // pokud category = all -> select vsechny produkty
-        );
+        .filter((product) => category.length === 0 || category.includes(product.category));
 
     function handleIdChange(e) {
         if (e.target.checked === true) {
@@ -32,21 +30,25 @@ function AllProducts() {
     }
 
     function handleCategoryChange(e) {
-        setCategory(e.target.value);
+        if (e.target.checked) {
+            setCategory(c => [...c, e.target.value]);
+        }
+        else {
+            setCategory(c => c.filter((cat) => cat !== e.target.value));
+        }
     }
 
     return(
         <div className="flex flex-row">
-            <div className="w-1/10 min-w-[200px] flex flex-col items-start justify-start mt-[64px] mr-8">
+            <div className="w-1/10 min-w-[200px] flex flex-col items-start justify-start mt-[200px] mr-8">
                 <ProductFilter onChange={handleIdChange} name={"id"}/>
-                <p>CATEGORIES</p>
-                <ProductFilter onChange={handleCategoryChange} name={"all"} checked={category === "all"} value={"all"}/>
-                <ProductFilter onChange={handleCategoryChange} name={"electronics"} checked={category === "electronics"} value={"electronics"}/>
-                <ProductFilter onChange={handleCategoryChange} name={"jewelery"} checked={category === "jewelery"} value={"jewelery"}/>
-                <ProductFilter onChange={handleCategoryChange} name={"men's clothing"} checked={category === "men's clothing"} value={"men's clothing"}/>
-                <ProductFilter onChange={handleCategoryChange} name={"women's clothing"} checked={category === "women's clothing"} value={"women's clothing"}/>
+                <h2>CATEGORIES</h2>
+                <ProductFilter onChange={handleCategoryChange} name={"electronics"} value={"electronics"}/>
+                <ProductFilter onChange={handleCategoryChange} name={"jewelery"} value={"jewelery"}/>
+                <ProductFilter onChange={handleCategoryChange} name={"men's clothing"} value={"men's clothing"}/>
+                <ProductFilter onChange={handleCategoryChange} name={"women's clothing"} value={"women's clothing"}/>
             </div>
-            <div className="mt-[64px] flex flex-col text-center items-center justify-center w-4/5">
+            <div className="mt-[64px] flex flex-col text-center items-center justify-center w-9/10">
                 <h1 className="m-[40px] font-bold text-5xl text-gray-800">
                     all products
                 </h1>
