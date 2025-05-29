@@ -4,7 +4,6 @@ function HeroSection() {
   return (
     <div className="relative w-full h-screen mt-16">
       <img src={img} alt="Pozadí" className="w-full h-full object-cover" />
-
       <div className="absolute top-0 left-0 w-1/2 h-full flex items-center justify-start">
         <div className="bg-black/60 text-white p-5 rounded-xl absolute top-12 left-5">
           <h1 className="leading-none text-[clamp(2rem,5vw,3rem)] font-extrabold">

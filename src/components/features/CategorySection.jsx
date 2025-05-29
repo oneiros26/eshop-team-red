@@ -19,15 +19,14 @@ function TrendingSection() {
 
   return (
     <div className="my-10">
-      <h2 className="text-center font-semibold text-5xl p-8">Categories</h2>
+      <h2 className="text-center font-semibold text-5xl p-8">Kategorie</h2>
       <Swiper
         breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 }
+          640: { slidesPerView: 1, spaceBetween: 16 },
+      800: { slidesPerView: 2, spaceBetween: 16 },
+      1200: { slidesPerView: 3, spaceBetween: 16 },
+      1300: { slidesPerView: 3, spaceBetween: 0 },
         }}
-        spaceBetween={0}
-        slidesPerView={"3"}
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
