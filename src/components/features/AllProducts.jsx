@@ -7,27 +7,12 @@ import ProductFilter from "./ProductFilter";
 function AllProducts() {
     const apiData = useContext(DataContext)
 
-    const [selectedIds, setSelectedIds] = useState([]);
     const [category, setCategory] = useState([]);
 
-    useEffect(() => {
-        if (apiData && apiData.length > 0) {
-            setSelectedIds(apiData.map((product) => product.id));
-        }
-    }, [apiData]);
+    useEffect(() => {}, [apiData]);
 
     const selectedProducts = apiData
-        .filter((product) => selectedIds.includes(product.id))
         .filter((product) => category.length === 0 || category.includes(product.category));
-
-    function handleIdChange(e) {
-        if (e.target.checked === true) {
-            setSelectedIds([8, 6, 9])
-        }
-        else {
-            setSelectedIds(apiData.map((product) => product.id))
-        }
-    }
 
     function handleCategoryChange(e) {
         if (e.target.checked) {
@@ -41,7 +26,6 @@ function AllProducts() {
     return(
         <div className="flex flex-row">
             <div className="w-1/10 min-w-[200px] flex flex-col items-start justify-start mt-[200px] mr-8">
-                <ProductFilter onChange={handleIdChange} name={"id"}/>
                 <h2>CATEGORIES</h2>
                 <ProductFilter onChange={handleCategoryChange} name={"electronics"} value={"electronics"}/>
                 <ProductFilter onChange={handleCategoryChange} name={"jewelery"} value={"jewelery"}/>
