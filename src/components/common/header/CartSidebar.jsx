@@ -11,7 +11,7 @@ function CartSidebar({ setShowCart }) {
     const { cartItems } = useContext(CartContext);
 
     return (
-        <div className="fixed top-16 bottom-0 w-1/4 right-0 bg-gray-100 shadow-lg z-30 px-4 py-4 flex flex-col">
+        <div className="fixed top-16 bottom-0 w-[30%] right-0 bg-gray-100 shadow-lg z-30 px-4 py-4 flex flex-col">
             {cartItems.length !== 0
                 ? (<h2 className="text-gray-700 text-xl font-semibold p-4">Váš košík</h2>)
                 : (<div className="absolute inset-0 items-center justify-center flex flex-col gap-5"><img className="w-1/3 opacity-50" src={cartIconOpen} alt="cart Icon" /><h2 className="text-gray-500 text-sm font-semibold">Váš košík je prázdný</h2></div>
