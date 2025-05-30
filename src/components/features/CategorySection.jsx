@@ -18,6 +18,7 @@ function TrendingSection() {
     { title: "Nascar", image: Nascar },
     { title: "Formula E", image: FormulaE },
     { title: "Hypercars", image: HyperCar },
+    { title: "Special", image: CarLoop },
   ];
 
   const duplicatedSlides = [...slides, ...slides];
