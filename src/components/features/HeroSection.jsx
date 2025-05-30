@@ -1,4 +1,5 @@
 import img from "../../assets/SF-24-Launch-GIF-2_2048x2048.webp"; // Bro who did this
+import { Link } from "react-router-dom";
 
 function HeroSection() {
   return (
@@ -23,9 +24,9 @@ function HeroSection() {
             Pro závodní adrenalin i elegantní dominanci na silnici. Vaše vášeň
             začíná zde.
           </p>
-          <button className="cursor-pointer overlay-button whitespace-nowrap absolute -bottom-20 left bg-blue-700/80 hover:bg-blue-600 text-white py-3 px-6 text-lg rounded-lg hover:opacity-100 transition-opacity duration-300">
+          <Link to='all-products' className="cursor-pointer overlay-button whitespace-nowrap absolute -bottom-20 left bg-blue-700/80 hover:bg-blue-600 text-white py-3 px-6 text-lg rounded-lg hover:opacity-100 transition-opacity duration-300">
             Přejdi na trending produkty.
-          </button>
+          </Link>
         </div>
       </div>
     </div>
