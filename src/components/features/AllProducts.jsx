@@ -2,15 +2,20 @@ import React, { useContext, useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { DataContext } from "../../context/DataProvider";
 import ProductFilter from "./ProductFilter";
-
+import { useLocation } from "react-router-dom";
 
 function AllProducts() {
     const apiData = useContext(DataContext)
-
+    const location = useLocation();
     const [category, setCategory] = useState([]);
     const [search, setSearch] = useState("");
 
-    useEffect(() => {}, [apiData]);
+    // On mount, check for ?category= in URL and set initial category
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const cat = params.get("category");
+        if (cat) setCategory([cat]);
+    }, [location.search]);
 
     const selectedProducts = apiData
         .filter((product) => (category.length === 0 || category.includes(product.category)))
@@ -39,12 +44,12 @@ function AllProducts() {
                 </div>
                 <div className="w-full">
                     <h2>CATEGORIES</h2>
-                    <ProductFilter onChange={handleCategoryChange} name={"Group GT3"} value={"groupgt3"}/>
-                    <ProductFilter onChange={handleCategoryChange} name={"Formula 1"} value={"formula1"}/>
-                    <ProductFilter onChange={handleCategoryChange} name={"Formula E💅"} value={"formulae"}/>
-                    <ProductFilter onChange={handleCategoryChange} name={"NASCAR"} value={"nascar"}/>
-                    <ProductFilter onChange={handleCategoryChange} name={"Hypercars"} value={"hypercar"}/>
-                    <ProductFilter onChange={handleCategoryChange} name={"Special"} value={"special"}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"Group GT3"} value={"groupgt3"} checked={category.includes("groupgt3")}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"Formula 1"} value={"formula1"} checked={category.includes("formula1")}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"Formula E💅"} value={"formulae"} checked={category.includes("formulae")}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"NASCAR"} value={"nascar"} checked={category.includes("nascar")}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"Hypercars"} value={"hypercar"} checked={category.includes("hypercar")}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"Special"} value={"special"} checked={category.includes("special")}/>
                 </div>
             </div>
             <div className="mt-[64px] flex flex-col text-center items-center justify-center w-5/6">

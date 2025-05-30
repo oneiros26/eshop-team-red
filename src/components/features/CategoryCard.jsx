@@ -1,11 +1,27 @@
 import { Link } from "react-router-dom";
 
-function ProductCard({
+function CategoryCard({
   title = "not defined",
   image = "https://placehold.co/450x300",
+  category = "",
 }) {
+  // Map display title to category value used in AllProducts
+  const categoryMap = {
+    "Group GT3": "groupgt3",
+    "Formula 1": "formula1",
+    "Formula E": "formulae",
+    "Nascar": "nascar",
+    "Hypercars": "hypercar",
+    "Special": "special",
+  };
+  const categoryValue = categoryMap[title] || "";
   return (
-    <Link to={`/all-products`} className="flex-shrink-0">
+    <Link
+      to={`/all-products${
+        categoryValue ? `?category=${categoryValue}` : ""
+      }`}
+      className="flex-shrink-0"
+    >
       <div className="flex-shrink-0 bg-cover h-[300px] w-[400px] relative">
         <div className="bg-gradient-to-tr from-black to-transparent rounded-[40px]">
           <img
@@ -23,4 +39,4 @@ function ProductCard({
   );
 }
 
-export default ProductCard;
+export default CategoryCard;
