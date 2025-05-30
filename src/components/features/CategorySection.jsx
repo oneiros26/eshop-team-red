@@ -20,7 +20,7 @@ function TrendingSection() {
     { title: "Hypercars", image: HyperCar },
   ];
 
-  const duplicatedSlides = [...slides, ...slides, ...slides];
+  const duplicatedSlides = [...slides, ...slides];
 
   return (
     <div className="my-10">
