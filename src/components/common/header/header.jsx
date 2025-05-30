@@ -23,17 +23,17 @@ function Header() {
             <nav className="h-full">
                 <ul onMouseLeave={() => setShowCart(false)} className="flex items-center gap-6 h-full">
                     <li>
-                        <Link to="/" className="hover:underline">
+                        <Link to="/" onClick={() => setShowCart(false)} className="hover:underline">
                             Domov
                         </Link>
                     </li>
                     <li>
-                        <Link to="/all-products" className="hover:underline">
+                        <Link to="/all-products" onClick={() => setShowCart(false)} className="hover:underline">
                             Produkty
                         </Link>
                     </li>
                     <li>
-                        <Link to="/contact" className="hover:underline">
+                        <Link to="/contact" onClick={() => setShowCart(false)} className="hover:underline">
                             Kontakty
                         </Link>
                     </li>
@@ -45,7 +45,7 @@ function Header() {
                             onMouseEnter={() => setShowCart(true)}
                             onClick={() => setShowCart(!showCart)}
                         />
-                        {showCart && <CartSidebar></CartSidebar>}
+                        {showCart && <CartSidebar setShowCart={setShowCart}></CartSidebar>}
                     </li>
                 </ul>
             </nav>
