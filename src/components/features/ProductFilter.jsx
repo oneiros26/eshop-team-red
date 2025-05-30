@@ -1,10 +1,9 @@
-import { useState } from 'react';
 
 function ProductFilter({ onChange, name, checked, value }) {
 
     return (
-        <div className="m-2 w-full">
-            <div className="flex flex-row justify-between">
+        <div className="mt-2 w-full">
+            <div className="flex flex-row justify-between w-full">
                 <label className="text-gray-700 font-medium" htmlFor={name}>
                     {name}
                 </label>

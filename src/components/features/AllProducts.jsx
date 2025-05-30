@@ -27,17 +27,17 @@ function AllProducts() {
 
     return(
         <div className="flex flex-row">
-            <div className="w-1/10 min-w-[200px] flex flex-col items-start justify-start mt-[200px] mr-8">
-                <div className="mb-6">
+            <div className="w-1/6 min-w-[200px] flex flex-col items-start justify-start mt-[200px] mr-4 pl-4">
+                <div className="mb-6 w-full">
                     <input
                         type="text"
-                        placeholder="Search products by name..."
+                        placeholder="🔍Hledej..."
                         value={search}
                         onChange={e => setSearch(e.target.value)}
-                        className="border border-gray-300 rounded px-3 py-2 w-72 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
                     />
                 </div>
-                <div className="border-[2px] border-green-600" >
+                <div className="w-full">
                     <h2>CATEGORIES</h2>
                     <ProductFilter onChange={handleCategoryChange} name={"electronics"} value={"electronics"}/>
                     <ProductFilter onChange={handleCategoryChange} name={"jewelery"} value={"jewelery"}/>
@@ -45,7 +45,7 @@ function AllProducts() {
                     <ProductFilter onChange={handleCategoryChange} name={"women's clothing"} value={"women's clothing"}/>
                 </div>
             </div>
-            <div className="mt-[64px] flex flex-col text-center items-center justify-center w-9/10">
+            <div className="mt-[64px] flex flex-col text-center items-center justify-center w-5/6">
                 <h1 className="m-[40px] font-bold text-3xl text-gray-800">
                     all products
                 </h1>
