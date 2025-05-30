@@ -1,11 +1,18 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState, useEffect } from 'react'
 import { DataContext } from './DataProvider.jsx';
 
 export const CartContext = createContext();
 
 function CartProvider({ children }) {
     const [cartItems, setCartItems] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [localQty, setLocalQty] = useState(null);
     const productsAvailable = useContext(DataContext);
+
+    useEffect(() => {
+        const total = cartItems.reduce((acc, item) => acc + (item.price * item.quantity || 0), 0);
+        setTotalPrice(Math.round(total * 10) / 10);
+    }, [cartItems]);
 
     function addToCart(id) {
 
@@ -56,8 +63,8 @@ function CartProvider({ children }) {
         }
     }
 
-    function modifyQuantity(event, id) {
-        const newQuantity = Number(event.target.value);
+    function modifyQuantity(num, id) {
+        const newQuantity = num;
 
         if (isNaN(newQuantity) || newQuantity > 3 || newQuantity < 0)
             console.log('Invalid quantity');
@@ -74,7 +81,7 @@ function CartProvider({ children }) {
         }
     }
 
-    return <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, incrementQuantity, decrementQuantity, modifyQuantity }}>
+    return <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, incrementQuantity, decrementQuantity, modifyQuantity, totalPrice }}>
         {children}
     </CartContext.Provider>
 }

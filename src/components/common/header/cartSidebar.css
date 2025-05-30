@@ -8,3 +8,24 @@ input[type=number] {
     -moz-appearance: textfield;
     /* Firefox */
 }
+
+button#noCartItems:focus::before {
+    content: 'Nejdříve něco přidejte do košíku';
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgb(244, 6, 6);
+    position: absolute;
+    top: -37px;
+    left: 0px;
+}
+
+/* styles.css */
+.scrollbar-hidden {
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
