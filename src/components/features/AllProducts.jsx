@@ -8,11 +8,13 @@ function AllProducts() {
     const apiData = useContext(DataContext)
 
     const [category, setCategory] = useState([]);
+    const [search, setSearch] = useState("");
 
     useEffect(() => {}, [apiData]);
 
     const selectedProducts = apiData
-        .filter((product) => category.length === 0 || category.includes(product.category));
+        .filter((product) => (category.length === 0 || category.includes(product.category)))
+        .filter((product) => product.title.toLowerCase().includes(search.toLowerCase()) || product.description.toLowerCase().includes(search.toLowerCase()));
 
     function handleCategoryChange(e) {
         if (e.target.checked) {
@@ -26,11 +28,22 @@ function AllProducts() {
     return(
         <div className="flex flex-row">
             <div className="w-1/10 min-w-[200px] flex flex-col items-start justify-start mt-[200px] mr-8">
-                <h2>CATEGORIES</h2>
-                <ProductFilter onChange={handleCategoryChange} name={"electronics"} value={"electronics"}/>
-                <ProductFilter onChange={handleCategoryChange} name={"jewelery"} value={"jewelery"}/>
-                <ProductFilter onChange={handleCategoryChange} name={"men's clothing"} value={"men's clothing"}/>
-                <ProductFilter onChange={handleCategoryChange} name={"women's clothing"} value={"women's clothing"}/>
+                <div className="mb-6">
+                    <input
+                        type="text"
+                        placeholder="Search products by name..."
+                        value={search}
+                        onChange={e => setSearch(e.target.value)}
+                        className="border border-gray-300 rounded px-3 py-2 w-72 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    />
+                </div>
+                <div className="border-[2px] border-green-600" >
+                    <h2>CATEGORIES</h2>
+                    <ProductFilter onChange={handleCategoryChange} name={"electronics"} value={"electronics"}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"jewelery"} value={"jewelery"}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"men's clothing"} value={"men's clothing"}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"women's clothing"} value={"women's clothing"}/>
+                </div>
             </div>
             <div className="mt-[64px] flex flex-col text-center items-center justify-center w-9/10">
                 <h1 className="m-[40px] font-bold text-3xl text-gray-800">
