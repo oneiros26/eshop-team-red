@@ -8,12 +8,16 @@ import FormulaImage from "../../assets/category-photos/ayumu-iwasa-team-mugen.jp
 import GroupGt3 from "../../assets/category-photos/group-gt3.jpg";
 import CarLoop from "../../assets/category-photos/car-loop.jpg";
 import Nascar from "../../assets/category-photos/nascar.jpg";
+import FormulaE from "../../assets/category-photos/formulae.avif";
+import HyperCar from "../../assets/category-photos/hypercar.webp";
 
 function TrendingSection() {
   const slides = [
     { title: "Formula 1", image: FormulaImage },
     { title: "Group GT3", image: GroupGt3 },
     { title: "Nascar", image: Nascar },
+    { title: "Formula E", image: FormulaE },
+    { title: "Hypercars", image: HyperCar },
   ];
 
   const duplicatedSlides = [...slides, ...slides, ...slides];
