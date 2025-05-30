@@ -1,9 +1,9 @@
-import './footer.css';
+import "./footer.css";
 
 export default function Footer() {
   return (
     <footer className="bg-blue-200 text-gray-800 py-8 shadow-inner mt-auto">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm mb-8">
         {/* O nás */}
         <div>
           <h3 className="font-bold mb-2">O nás</h3>
@@ -15,10 +15,22 @@ export default function Footer() {
         {/* Odkazy */}
         <div>
           <h3 className="font-bold mb-2">Navigace</h3>
-          <ul className="space-y-1">
-            <li><a href="/" className="hover:underline">Domů</a></li>
-            <li><a href="/all-products" className="hover:underline">Produkty</a></li>
-            <li><a href="/contact" className="hover:underline">Kontakt</a></li>
+          <ul className="ml-4">
+            <li>
+              <a href="/" className="hover:underline">
+                Domů
+              </a>
+            </li>
+            <li>
+              <a href="/all-products" className="hover:underline">
+                Produkty
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:underline">
+                Kontakt
+              </a>
+            </li>
           </ul>
         </div>
 
