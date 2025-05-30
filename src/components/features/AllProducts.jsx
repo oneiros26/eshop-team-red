@@ -39,10 +39,12 @@ function AllProducts() {
                 </div>
                 <div className="w-full">
                     <h2>CATEGORIES</h2>
-                    <ProductFilter onChange={handleCategoryChange} name={"electronics"} value={"electronics"}/>
-                    <ProductFilter onChange={handleCategoryChange} name={"jewelery"} value={"jewelery"}/>
-                    <ProductFilter onChange={handleCategoryChange} name={"men's clothing"} value={"men's clothing"}/>
-                    <ProductFilter onChange={handleCategoryChange} name={"women's clothing"} value={"women's clothing"}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"Group GT3"} value={"groupgt3"}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"Formula 1"} value={"formula1"}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"Formula E💅"} value={"formulae"}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"NASCAR"} value={"nascar"}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"Hypercars"} value={"hypercar"}/>
+                    <ProductFilter onChange={handleCategoryChange} name={"Special"} value={"special"}/>
                 </div>
             </div>
             <div className="mt-[64px] flex flex-col text-center items-center justify-center w-5/6">
