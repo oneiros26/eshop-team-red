@@ -60,7 +60,10 @@ function OrderConfirm() {
         </section>
       </article>
       <h3 className="text-lg">Something wrong? Please contact us!</h3>
-      <Link className="flex justify-center items-center cursor-pointer py-3 px-6 bg-blue-400 hover:bg-blue-500 rounded-lg self-center text-xl">
+      <Link
+        to="/contact"
+        className="flex justify-center items-center cursor-pointer py-3 px-6 bg-blue-400 hover:bg-blue-500 rounded-lg self-center text-xl"
+      >
         Contact
       </Link>
     </main>

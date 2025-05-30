@@ -1,10 +1,14 @@
-import img from "../../assets/SF-24-Launch-GIF-2_2048x2048-xd.webp";
+import img from "../../assets/SF-24-Launch-GIF-2_2048x2048.webp"; // Bro who did this
 
 function HeroSection() {
   return (
     <div className="relative w-full h-screen mt-16">
       <div className="bg-gradient-to-br from-black to-transparent w-full h-full absolute">
-          <img src={img} alt="Pozadí" className="w-full h-full object-cover relative -z-10"/>
+        <img
+          src={img}
+          alt="Pozadí"
+          className="w-full h-full object-cover relative -z-10"
+        />
       </div>
       <div className="absolute top-0 left-0 w-1/2 h-full flex items-center justify-start">
         <div className="text-white p-5 rounded-xl absolute top-12 left-5">
